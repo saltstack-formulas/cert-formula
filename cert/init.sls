@@ -34,10 +34,10 @@ cert_packages:
 {{ cert|indent(8, True) }}
 {% else %}
     - source: salt://cert/{{ name }}
+{% endif %}
     - user: {{ cert_user }}
     - group: {{ cert_group }}
     - mode: {{ cert_mode }}
-{% endif %}
 
   {% if key %}
 {{ key_dir }}/{{ name }}.key:
