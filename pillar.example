@@ -4,6 +4,11 @@ cert:
       key: |
         KEY HERE
     name_of_2nd_cert:
+      cert: |
+        CERT HERE
+      key: |
+        KEY HERE
+    name_of_3rd_cert:
       key: |
         KEY HERE
       cert_user: root
@@ -14,4 +19,4 @@ cert:
       key_mode: 640
       cert_dir: /etc/ssl/certs/
       key_dir: /etc/ssl/private
-    name_of_3rd_cert: {} # cert has no private key to deploy  
+    name_of_4th_cert: {} # cert has no private key to deploy
