@@ -1,10 +1,7 @@
 {% set map = salt['grains.filter_by']({
-    'Arch': {
+    'default': {
         'cert_dir': '/etc/ssl/certs',
         'key_dir': '/etc/ssl/private',
-        'pkgs': [ 'ca-certificates', 
-                  'ca-certificates-mozilla',
-                  'ca-certificates-utils',],
         'cert_user': 'root',
         'key_user': 'root',
         'cert_group': 'root',
@@ -12,37 +9,25 @@
         'cert_mode': 644,
         'key_mode': 600,
     },
+    'Arch': {
+        'pkgs': [ 'ca-certificates',
+                  'ca-certificates-mozilla',
+                  'ca-certificates-utils',],
+    },
     'Debian': {
-        'cert_dir': '/etc/ssl/certs',
-        'key_dir': '/etc/ssl/private',
         'pkgs': [ 'ca-certificates', 'ssl-cert' ],
-        'cert_user': 'root',
-        'key_user': 'root',
-        'cert_group': 'root',
         'key_group': 'ssl-cert',
-        'cert_mode': 644,
         'key_mode': 640,
     },
     'RedHat': {
         'cert_dir': '/etc/pki/tls/certs',
         'key_dir': '/etc/pki/tls/private',
         'pkgs': [ 'ca-certificates' ],
-        'cert_user': 'root',
-        'key_user': 'root',
-        'cert_group': 'root',
-        'key_group': 'root',
-        'cert_mode': 644,
-        'key_mode': 600,
    },
     'Suse': {
         'cert_dir': '/etc/ssl/certs',
         'key_dir': '/etc/ssl/private',
         'pkgs': [ 'ca-certificates', 'ca-certificates-mozilla'],
-        'cert_user': 'root',
-        'key_user': 'root',
-        'cert_group': 'root',
-        'key_group': 'root',
         'cert_mode': '444',
-        'key_mode': '600',
     },
-}, grain='os_family', merge=salt['pillar.get']('cert:lookup')) %}
+}, grain='os_family', merge=salt['pillar.get']('cert:lookup'), base='default') %}
