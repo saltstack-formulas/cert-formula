@@ -1,4 +1,8 @@
 cert:
+  # use lookup section to override 'map.jinja' values
+  #lookup:
+    # define source directory for certs
+    #cert_source_dir: salt://files/certs/
   certlist:
     name_of_cert:
       key: |
