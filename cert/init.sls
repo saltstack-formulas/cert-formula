@@ -33,7 +33,7 @@ cert_packages:
     - contents: |
 {{ cert|indent(8, True) }}
 {% else %}
-    - source: salt://cert/{{ name }}
+    - source: {{ map.cert_source_dir }}{{ name }}
 {% endif %}
     - user: {{ cert_user }}
     - group: {{ cert_group }}
