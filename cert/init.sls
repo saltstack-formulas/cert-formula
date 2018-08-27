@@ -27,7 +27,7 @@ cert_packages:
   {% set key_dir = data.get('key_dir', map.key_dir) %}
 
 
-{{ cert_dir }}/{{ name }}:
+{{ cert_dir }}/{{ name }}.crt:
   file.managed:
 {% if cert %}
     - contents: |
@@ -54,7 +54,7 @@ cert_packages:
     - name: update-ca-certificates
     - runas: root
     - onchanges:
-      - file: {{ cert_dir }}/{{ name }}
+      - file: {{ cert_dir }}/{{ name }}.crt
 {% endif %}
 
 {% endfor %}
