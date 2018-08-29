@@ -35,6 +35,7 @@ cert_packages:
 {% else %}
     - source: {{ map.cert_source_dir }}{{ name }}
 {% endif %}
+    - makedirs: True
     - user: {{ cert_user }}
     - group: {{ cert_group }}
     - mode: {{ cert_mode }}
@@ -44,6 +45,7 @@ cert_packages:
   file.managed:
     - contents: |
 {{ key|indent(8, True) }}
+    - makedirs: True
     - user: {{ key_user }}
     - group: {{ key_group }}
     - mode: {{ key_mode }}
