@@ -1,0 +1,69 @@
+driver:
+  name: docker
+  use_sudo: false
+  privileged: true
+  # provision_command workaround for Ubuntu 17.10 and 18.04
+  # https://github.com/test-kitchen/kitchen-docker/issues/285
+  provision_command: mkdir -p /run/sshd
+
+transport:
+  name: ssh
+
+platforms:
+  - name: ubuntu-18.04
+    driver:
+       image: dokken/ubuntu-18.04
+       pid_one_command: /bin/systemd
+  - name: centos-7
+    driver_config:
+      provision_command:
+        - yum -y install initscripts 
+      platform: rhel
+      run_command: /usr/lib/systemd/systemd
+      pid_one_command: /usr/lib/systemd/systemd
+
+suites:
+  - name: oxygen_cert
+    provisioner:
+      salt_bootstrap_options: -X -p git stable 2018.3.2
+      state_top:
+        base:
+          '*':
+            - test/integration/states/setup-certs-to-remove
+            - cert
+      pillars:
+        top.sls:
+          base:
+            "*":
+              - managed
+    verifier:
+      name: inspec
+      inspec_tests:
+        - path: test/integration/controls/managed.rb
+  - name: oxygen_nocerts
+    provisioner:
+      salt_bootstrap_options: -X -p git stable 2018.3.2
+      state_top:
+        base:
+          '*':
+            - cert
+      pillars:
+        top.sls:
+          base:
+            "*":
+              - nocerts
+    verifier:
+      name: inspec
+      inspec_tests:
+        - path: test/integration/controls/nocerts.rb
+
+provisioner:
+  name: salt_solo
+  salt_install: bootstrap
+  is_file_root: true
+  require_chef: false
+  salt_copy_filter:
+    - .git
+  pillars_from_files:
+    managed.sls: test/integration/pillar/managed.sls
+    nocerts.sls: test/integration/pillar/no_certs.sls
