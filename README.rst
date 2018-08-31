@@ -3,7 +3,8 @@ cert
 ====
 
 .. image:: https://travis-ci.org/saltstack-formulas/cert-formula.svg?branch=master
-
+    :target: https://travis-ci.org/saltstack-formulas/cert-formula
+    
 Formula to deploy certificates.
 
 .. note::
