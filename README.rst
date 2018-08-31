@@ -2,6 +2,8 @@
 cert
 ====
 
+.. image:: https://travis-ci.org/saltstack-formulas/cert-formula.svg?branch=master
+
 Formula to deploy certificates.
 
 .. note::
