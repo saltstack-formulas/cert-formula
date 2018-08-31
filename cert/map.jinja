@@ -3,12 +3,14 @@
         'cert_dir': '/etc/ssl/certs',
         'key_dir': '/etc/ssl/private',
         'cert_source_dir': 'salt://cert/',
+        'cert_tmp_dir': '/tmp/certs/',
         'cert_user': 'root',
         'key_user': 'root',
         'cert_group': 'root',
         'key_group': 'root',
         'cert_mode': 644,
         'key_mode': 600,
+        'remove': false,
     },
     'Arch': {
         'pkgs': [ 'ca-certificates',
@@ -19,6 +21,7 @@
         'pkgs': [ 'ca-certificates', 'ssl-cert' ],
         'key_group': 'ssl-cert',
         'key_mode': 640,
+        'cert_dir': '/usr/local/share/ca-certificates/',
     },
     'RedHat': {
         'cert_dir': '/etc/pki/tls/certs',

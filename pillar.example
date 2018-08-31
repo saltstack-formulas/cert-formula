@@ -24,3 +24,11 @@ cert:
       cert_dir: /etc/ssl/certs/
       key_dir: /etc/ssl/private
     name_of_4th_cert: {} # cert has no private key to deploy
+    name_of_cert_you_want_removed:
+      remove: True # will remove cert and key with this name!
+      key: |
+        KEY HERE
+      cert: |
+        CERT HERE
+      cert_dir: /usr/local/share/ca-certificates
+      key_dir: /etc/ssl/private 

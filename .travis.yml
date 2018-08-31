@@ -1,0 +1,19 @@
+sudo: required
+
+language: python
+
+services:
+  - docker
+
+before_install:
+  - bundle install
+
+env:
+  matrix:
+    - INSTANCE: oxygen-cert-ubuntu-1804
+    - INSTANCE: oxygen-cert-centos-7
+    - INSTANCE: oxygen-nocerts-ubuntu-1804
+    - INSTANCE: oxygen-nocerts-centos-7
+
+script:
+  - bundle exec kitchen verify ${INSTANCE}

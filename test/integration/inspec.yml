@@ -1,0 +1,8 @@
+name: cert-formula-inspec-profile
+title: saltstack cert-formula InSpec Profile
+maintainer: Arthur Meneau
+copyright: Arthur Meneau
+copyright_email: arthur.meneau@gmail.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.1.0
