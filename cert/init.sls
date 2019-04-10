@@ -33,7 +33,7 @@ cert_packages:
   {% set cert_dir = data.get('cert_dir', map.cert_dir) %}
   {% set key_dir = data.get('key_dir', map.key_dir) %}
   {% set remove = data.get('remove', map.remove) %}
-  
+
 {{ cert_dir }}/{{ name }}{{ cert_ext }}:
   {% if remove %}
   file.absent:
