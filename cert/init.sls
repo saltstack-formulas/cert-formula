@@ -24,7 +24,7 @@ cert_packages:
   {% set key = data.get('key', False) %}
   {% set cert_ext = data.get('cert_ext', map.cert_ext) %}
   {% set key_ext = data.get('key_ext', map.key_ext) %}
-  {% set cert_user = data.get('cert_user', map.cert_user) %}  
+  {% set cert_user = data.get('cert_user', map.cert_user) %}
   {% set key_user = data.get('key_user', map.key_user) %}
   {% set cert_group = data.get('cert_group', map.cert_group) %}
   {% set key_group = data.get('key_group', map.key_group) %}
