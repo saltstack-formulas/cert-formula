@@ -23,6 +23,8 @@ cert:
       key_mode: 640
       cert_dir: /etc/ssl/certs/
       key_dir: /etc/ssl/private
+      cert_ext: .crt  # The default certificate and key file extension values
+      key_ext: .key   # are known to work. Changing them must be done carefully
     name_of_4th_cert: {} # cert has no private key to deploy
     name_of_cert_you_want_removed:
       remove: True # will remove cert and key with this name!
