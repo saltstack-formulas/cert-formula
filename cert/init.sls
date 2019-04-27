@@ -22,6 +22,8 @@ cert_packages:
 
   {% set cert = data.get('cert', False) %}
   {% set key = data.get('key', False) %}
+  {% set cert_ext = data.get('cert_ext', map.cert_ext) %}
+  {% set key_ext = data.get('key_ext', map.key_ext) %}
   {% set cert_user = data.get('cert_user', map.cert_user) %}
   {% set key_user = data.get('key_user', map.key_user) %}
   {% set cert_group = data.get('cert_group', map.cert_group) %}
@@ -32,18 +34,18 @@ cert_packages:
   {% set key_dir = data.get('key_dir', map.key_dir) %}
   {% set remove = data.get('remove', map.remove) %}
 
-{{ cert_dir }}/{{ name }}.crt:
+{{ cert_dir }}/{{ name }}{{ cert_ext }}:
   {% if remove %}
   file.absent:
     - onlyif:
-      - "test -e {{ cert_dir }}/{{ name }}.crt"
+      - "test -e {{ cert_dir }}/{{ name }}{{ cert_ext }}"
   {% else %}
   file.managed:
     {% if cert %}
     - contents: |
 {{ cert|indent(8, True) }}
     {% else %}
-    - source: {{ map.cert_source_dir }}{{ name }}.crt
+    - source: {{ map.cert_source_dir }}{{ name }}{{ cert_ext }}
     {% endif %}
     - makedirs: True
     - user: {{ cert_user }}
@@ -56,11 +58,11 @@ cert_packages:
   {% endif %}
 
   {% if key %}
-{{ key_dir }}/{{ name }}.key:
+{{ key_dir }}/{{ name }}{{ key_ext }}:
     {% if remove %}
   file.absent:
     - onlyif:
-      - "test -e {{ key_dir }}/{{ name }}.key"
+      - "test -e {{ key_dir }}/{{ name }}{{ key_ext }}"
     {% else %}
   file.managed:
     - contents: |

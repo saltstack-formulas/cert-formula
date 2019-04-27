@@ -27,3 +27,14 @@ cert:
         -----BEGIN RSA PRIVATE KEY-----
         3MOCKED CERT AND KEY
         -----END RSA PRIVATE KEY-----
+    cert.and.key.with.ext.to.add:
+      cert: |
+        -----BEGIN CERTIFICATE-----
+        4MOCKED CERT AND KEY
+        -----END CERTIFICATE-----
+      cert_ext: .pem
+      key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        4MOCKED CERT AND KEY
+        -----END RSA PRIVATE KEY-----
+      key_ext: .priv

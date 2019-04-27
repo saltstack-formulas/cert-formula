@@ -27,6 +27,16 @@ control 'managed' do
     its('content') { should match /^1MOCKED CERT AND KEY/ }
     its('content') { should match /^-----END RSA PRIVATE KEY-----/ }
   end
+  describe file(cert_dir + 'cert.and.key.with.ext.to.add.pem') do
+    its('content') { should match /^-----BEGIN CERTIFICATE-----/ }
+    its('content') { should match /^4MOCKED CERT AND KEY/ }
+    its('content') { should match /^-----END CERTIFICATE-----/ }
+  end
+  describe file(key_dir + 'cert.and.key.with.ext.to.add.priv') do
+    its('content') { should match /^-----BEGIN RSA PRIVATE KEY-----/ }
+    its('content') { should match /^4MOCKED CERT AND KEY/ }
+    its('content') { should match /^-----END RSA PRIVATE KEY-----/ }
+  end
   describe file(cert_dir + 'cert.to.add.crt') do
     its('content') { should match /^-----BEGIN CERTIFICATE-----/ }
     its('content') { should match /^2MOCKED CERT/ }
