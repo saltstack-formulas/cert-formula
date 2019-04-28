@@ -1,6 +1,6 @@
 cert:
   lookup:
-    cert_source_dir: /tmp/kitchen/srv/salt/test/integration/files/
+    cert_source_dir: /tmp/kitchen/srv/salt/files/
   certlist:
     cert.from.src.to.add: {}
     cert.and.key.to.add:
