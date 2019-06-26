@@ -5,9 +5,10 @@ control 'managed' do
 
   cert_dir = '/etc/ssl/certs/'
   key_dir = '/etc/ssl/private/'
-  if os.family == 'debian'
+  case os[:name]
+  when 'debian', 'ubuntu'
     cert_dir = '/usr/local/share/ca-certificates/'
-  elsif os.family == 'redhat'
+  when 'redhat', 'centos', 'fedora'
     cert_dir = '/etc/pki/tls/certs/'
     key_dir = '/etc/pki/tls/private/'
   end
