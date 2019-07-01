@@ -52,10 +52,8 @@ cert_packages:
     - group: {{ cert_group }}
     - mode: {{ cert_mode }}
   {% endif %}
-  {% if grains['os_family']=="Debian" %}
     - onchanges_in:
       - cmd: update-ca-certificates
-  {% endif %}
 
   {% if key %}
 {{ key_dir }}/{{ name }}{{ key_ext }}:
@@ -77,9 +75,15 @@ cert_packages:
 {% endfor %}
 
 # We only want to run the update-ca-certificates if a cert was added or removed.
-{% if grains['os_family']=="Debian" and vals['managed_certs'] %}
+{% if vals['managed_certs'] %}
+{% set cert_update_cmd = map.cert_update_cmd|default("") %}
+{% if cert_update_cmd %}
 update-ca-certificates:
   cmd.run:
     - runas: root
-    - name: update-ca-certificates --fresh
-{% endif %} # / grains['os_family']=="Debian"
+    - name: {{ cert_update_cmd }}
+{% else %}
+# If an update command is not in the map, define an empty state for the requisite.
+update-ca-certificates: {}
+{% endif %} # / cert_update_cmd
+{% endif %} # / vals['managed_certs']
