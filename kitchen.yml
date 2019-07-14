@@ -105,6 +105,7 @@ platforms:
     driver:
       image: netmanagers/salt-2017.7-py2:opensuse-leap-42
       run_command: /usr/lib/systemd/systemd
+
 provisioner:
   name: salt_solo
   log_level: info
@@ -141,7 +142,7 @@ verifier:
   reporter:
     - cli
   inspec_tests:
-    - path: test/integration
+    - path: test/integration/default
 
 suites:
   - name: default
