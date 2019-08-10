@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
 cert:
   lookup:
     cert_source_dir: /tmp/kitchen/srv/salt/files/
@@ -18,7 +21,7 @@ cert:
         2MOCKED CERT
         -----END CERTIFICATE-----
     cert.and.key.to.remove:
-      remove: True
+      remove: true
       cert: |
         -----BEGIN CERTIFICATE-----
         3MOCKED CERT AND KEY
