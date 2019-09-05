@@ -2,6 +2,21 @@
 Changelog
 =========
 
+`0.4.1 <https://github.com/saltstack-formulas/cert-formula/compare/v0.4.0...v0.4.1>`_ (2019-09-05)
+------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen+travis:** replace EOL pre-salted images (\ `1b9fd9d <https://github.com/saltstack-formulas/cert-formula/commit/1b9fd9d>`_\ )
+
+Tests
+^^^^^
+
+
+* **inspec:** improve to work on ``amazon`` as well (\ `248d0e8 <https://github.com/saltstack-formulas/cert-formula/commit/248d0e8>`_\ )
+
 `0.4.0 <https://github.com/saltstack-formulas/cert-formula/compare/v0.3.2...v0.4.0>`_ (2019-08-10)
 ------------------------------------------------------------------------------------------------------
 
