@@ -17,7 +17,7 @@ cert_packages:
 {% set vals = { 'managed_certs': False } %}
 
 {% for name, data in salt['pillar.get']('cert:certlist', {}).items() %}
-  
+
   {% do vals.update({'managed_certs': True}) %}
 
   {% set cert = data.get('cert', False) %}
