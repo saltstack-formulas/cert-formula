@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.4.2](https://github.com/saltstack-formulas/cert-formula/compare/v0.4.1...v0.4.2) (2019-10-09)
+
+
+### Bug Fixes
+
+* **init.sls:** fix `salt-lint` errors ([](https://github.com/saltstack-formulas/cert-formula/commit/ce1d540))
+
+
+### Continuous Integration
+
+* **kitchen:** change `log_level` to `debug` instead of `info` ([](https://github.com/saltstack-formulas/cert-formula/commit/6c78248))
+* **kitchen:** install required packages to bootstrapped `opensuse` [skip ci] ([](https://github.com/saltstack-formulas/cert-formula/commit/40cfc7e))
+* **kitchen:** use bootstrapped `opensuse` images until `2019.2.2` [skip ci] ([](https://github.com/saltstack-formulas/cert-formula/commit/7653b5d))
+* **platform:** add `arch-base-latest` ([](https://github.com/saltstack-formulas/cert-formula/commit/743c609))
+* **travis:** remove `.ruby-version` to allow using `dist: bionic` ([](https://github.com/saltstack-formulas/cert-formula/commit/f89732b))
+* **yamllint:** add rule `empty-values` & use new `yaml-files` setting ([](https://github.com/saltstack-formulas/cert-formula/commit/5c5c218))
+* merge travis matrix, add `salt-lint` & `rubocop` to `lint` job ([](https://github.com/saltstack-formulas/cert-formula/commit/d680428))
+* use `dist: bionic` & apply `opensuse-leap-15` SCP error workaround ([](https://github.com/saltstack-formulas/cert-formula/commit/45d9085))
+
 ## [0.4.1](https://github.com/saltstack-formulas/cert-formula/compare/v0.4.0...v0.4.1) (2019-09-05)
 
 
