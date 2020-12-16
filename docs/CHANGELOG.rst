@@ -2,6 +2,55 @@
 Changelog
 =========
 
+`0.4.3 <https://github.com/saltstack-formulas/cert-formula/compare/v0.4.2...v0.4.3>`_ (2020-12-16)
+------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **release.config.js:** use full commit hash in commit link [skip ci] (\ `8e5a997 <https://github.com/saltstack-formulas/cert-formula/commit/8e5a997736f884caf3dfd9cc465739802b362bd0>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gemfile:** restrict ``train`` gem version until upstream fix [skip ci] (\ `1d3dbe0 <https://github.com/saltstack-formulas/cert-formula/commit/1d3dbe01308bd5d6bbbb2f98da0015edbd932004>`_\ )
+* **gemfile.lock:** add to repo with updated ``Gemfile`` [skip ci] (\ `2ab3b86 <https://github.com/saltstack-formulas/cert-formula/commit/2ab3b86586139968e26d3919ba30ca094d9323e7>`_\ )
+* **gitlab-ci:** use GitLab CI as Travis CI replacement (\ `7a45acc <https://github.com/saltstack-formulas/cert-formula/commit/7a45accfd6188149576aeceed1203f7fb388c1e7>`_\ )
+* **kitchen:** avoid using bootstrap for ``master`` instances [skip ci] (\ `1a60083 <https://github.com/saltstack-formulas/cert-formula/commit/1a600836745e98156761f3b1f6cd60470a094729>`_\ )
+* **kitchen:** use ``debian-10-master-py3`` instead of ``develop`` [skip ci] (\ `e0e3597 <https://github.com/saltstack-formulas/cert-formula/commit/e0e359705aa76f5e4be8f6c0a4e2c066716c64b0>`_\ )
+* **kitchen:** use ``develop`` image until ``master`` is ready (\ ``amazonlinux``\ ) [skip ci] (\ `8f3cd1d <https://github.com/saltstack-formulas/cert-formula/commit/8f3cd1df058bae7ab6895495a5482dd31438011f>`_\ )
+* **kitchen:** use ``saltimages`` Docker Hub where available [skip ci] (\ `83e3dc1 <https://github.com/saltstack-formulas/cert-formula/commit/83e3dc1718e92bca036f166c8085e9cf416ad0ab>`_\ )
+* **kitchen+travis:** remove ``master-py2-arch-base-latest`` [skip ci] (\ `70e7539 <https://github.com/saltstack-formulas/cert-formula/commit/70e7539e878df98b3551dc8560e4cff303daa106>`_\ )
+* **kitchen+travis:** upgrade matrix after ``2019.2.2`` release [skip ci] (\ `d2b4a13 <https://github.com/saltstack-formulas/cert-formula/commit/d2b4a13a62f1b5b454994e77f8ea928bbc5bc8b2>`_\ )
+* **pre-commit:** add to formula [skip ci] (\ `6ea0cec <https://github.com/saltstack-formulas/cert-formula/commit/6ea0cec3457d474f8f83a9fdd4239ba0bdac0484>`_\ )
+* **pre-commit:** enable/disable ``rstcheck`` as relevant [skip ci] (\ `2a8f832 <https://github.com/saltstack-formulas/cert-formula/commit/2a8f832e140dfdbf8143f1337d8a5d7dfa673df5>`_\ )
+* **pre-commit:** finalise ``rstcheck`` configuration [skip ci] (\ `125dffb <https://github.com/saltstack-formulas/cert-formula/commit/125dffb59a9429734d337360f407ae0a792902b8>`_\ )
+* **travis:** add notifications => zulip [skip ci] (\ `667d949 <https://github.com/saltstack-formulas/cert-formula/commit/667d9493814b31f43aa371c6284b53333305f8f5>`_\ )
+* **travis:** apply changes from build config validation [skip ci] (\ `6bb2e29 <https://github.com/saltstack-formulas/cert-formula/commit/6bb2e29c9353ee3a9c8985e0ac7568af64307b45>`_\ )
+* **travis:** opt-in to ``dpl v2`` to complete build config validation [skip ci] (\ `712662e <https://github.com/saltstack-formulas/cert-formula/commit/712662e8efa9d900eb34e0f3c1fddf832fa2f438>`_\ )
+* **travis:** quote pathspecs used with ``git ls-files`` [skip ci] (\ `8dc28ce <https://github.com/saltstack-formulas/cert-formula/commit/8dc28ce85ed7c85b672181a0183c9b1cd59c9422>`_\ )
+* **travis:** run ``shellcheck`` during lint job [skip ci] (\ `59c3c26 <https://github.com/saltstack-formulas/cert-formula/commit/59c3c26cc7fbbfa63a8ef64cac76345bd9bfb8d8>`_\ )
+* **travis:** update ``salt-lint`` config for ``v0.0.10`` [skip ci] (\ `126da96 <https://github.com/saltstack-formulas/cert-formula/commit/126da96d6ef9f671a10009a973386d6cdd2bf0ec>`_\ )
+* **travis:** use ``major.minor`` for ``semantic-release`` version [skip ci] (\ `bbcc4d7 <https://github.com/saltstack-formulas/cert-formula/commit/bbcc4d7f5bbe0d0fc55852bf177cb3b999d5a0cb>`_\ )
+* **travis:** use build config validation (beta) [skip ci] (\ `34b4f1b <https://github.com/saltstack-formulas/cert-formula/commit/34b4f1b3faf5403b5d37fe84ea56502141bc8108>`_\ )
+* **workflows/commitlint:** add to repo [skip ci] (\ `2b5b9c2 <https://github.com/saltstack-formulas/cert-formula/commit/2b5b9c28314aa6c031d22e1500e7ba847eef816e>`_\ )
+* merge travis matrix, add ``salt-lint`` & ``rubocop`` to ``lint`` job (\ `b3b4f57 <https://github.com/saltstack-formulas/cert-formula/commit/b3b4f578f1c532864a8209820e2afc907746d7d6>`_\ )
+
+Documentation
+^^^^^^^^^^^^^
+
+
+* **contributing:** remove to use org-level file instead [skip ci] (\ `48288cd <https://github.com/saltstack-formulas/cert-formula/commit/48288cdc0c26a06c72f496904a2c527cc70ebc23>`_\ )
+* **readme:** update link to ``CONTRIBUTING`` [skip ci] (\ `72ef2c0 <https://github.com/saltstack-formulas/cert-formula/commit/72ef2c0314ab7ccc4b85a59bdb9460953d16791c>`_\ )
+
+Performance Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **travis:** improve ``salt-lint`` invocation [skip ci] (\ `2ac2db7 <https://github.com/saltstack-formulas/cert-formula/commit/2ac2db71c5a005f09e534b5174a3c5956d13ff56>`_\ )
+
 `0.4.2 <https://github.com/saltstack-formulas/cert-formula/compare/v0.4.1...v0.4.2>`_ (2019-10-09)
 ------------------------------------------------------------------------------------------------------
 
