@@ -8,7 +8,7 @@ control 'managed' do
   case os[:name]
   when 'debian', 'ubuntu'
     cert_dir = '/usr/local/share/ca-certificates/'
-  when 'redhat', 'centos', 'fedora', 'amazon'
+  when 'redhat', 'centos', 'fedora', 'amazon', 'oracle'
     cert_dir = '/etc/pki/tls/certs/'
     key_dir = '/etc/pki/tls/private/'
   end
