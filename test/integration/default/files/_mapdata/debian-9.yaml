@@ -1,0 +1,20 @@
+# yamllint disable rule:indentation rule:line-length
+# Debian-9
+---
+values:
+  cert_dir: /usr/local/share/ca-certificates
+  cert_ext: .crt
+  cert_group: root
+  cert_mode: 644
+  cert_source_dir: /tmp/kitchen/srv/salt/files/
+  cert_tmp_dir: /tmp/certs/
+  cert_user: root
+  key_dir: /etc/ssl/private
+  key_ext: .key
+  key_group: ssl-cert
+  key_mode: 640
+  key_user: root
+  pkgs:
+  - ca-certificates
+  - ssl-cert
+  remove: false

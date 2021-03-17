@@ -1,0 +1,21 @@
+# yamllint disable rule:indentation rule:line-length
+# Arch
+---
+values:
+  cert_dir: /etc/ssl/certs
+  cert_ext: .crt
+  cert_group: root
+  cert_mode: 644
+  cert_source_dir: /tmp/kitchen/srv/salt/files/
+  cert_tmp_dir: /tmp/certs/
+  cert_user: root
+  key_dir: /etc/ssl/private
+  key_ext: .key
+  key_group: root
+  key_mode: 600
+  key_user: root
+  pkgs:
+  - ca-certificates
+  - ca-certificates-mozilla
+  - ca-certificates-utils
+  remove: false
