@@ -318,6 +318,7 @@ suites:
         base:
           '*':
             - states/setup-certs-to-remove
+            - cert._mapdata
             - cert
       pillars:
         top.sls:

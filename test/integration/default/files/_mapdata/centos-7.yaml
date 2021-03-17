@@ -1,0 +1,19 @@
+# yamllint disable rule:indentation rule:line-length
+# CentOS Linux-7
+---
+values:
+  cert_dir: /etc/pki/tls/certs
+  cert_ext: .crt
+  cert_group: root
+  cert_mode: 644
+  cert_source_dir: /tmp/kitchen/srv/salt/files/
+  cert_tmp_dir: /tmp/certs/
+  cert_user: root
+  key_dir: /etc/pki/tls/private
+  key_ext: .key
+  key_group: root
+  key_mode: 600
+  key_user: root
+  pkgs:
+  - ca-certificates
+  remove: false
