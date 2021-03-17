@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.4.4](https://github.com/saltstack-formulas/cert-formula/compare/v0.4.3...v0.4.4) (2021-03-17)
+
+
+### Continuous Integration
+
+* **commitlint:** ensure `upstream/master` uses main repo URL [skip ci] ([8aef477](https://github.com/saltstack-formulas/cert-formula/commit/8aef4779b9282533af6eeeb7d4dda9aeeaba1702))
+* **gemfile+lock:** use `ssf` customised `kitchen-docker` repo [skip ci] ([bc13f8a](https://github.com/saltstack-formulas/cert-formula/commit/bc13f8a86dd5fa2124f8a8e6f2ab1d86ffb5def9))
+* **gitlab-ci:** add `rubocop` linter (with `allow_failure`) [skip ci] ([6a7eb8c](https://github.com/saltstack-formulas/cert-formula/commit/6a7eb8c27c23a4399ee7eca7c5c791200181319a))
+* **kitchen+ci:** use latest pre-salted images (after CVE) [skip ci] ([d7b7da0](https://github.com/saltstack-formulas/cert-formula/commit/d7b7da02ef0cee7783aea29e8ea9b151e8a4b92b))
+* **kitchen+gitlab-ci:** use latest pre-salted images [skip ci] ([1af4b43](https://github.com/saltstack-formulas/cert-formula/commit/1af4b436c9349f2489c753aea113dc7c3d3a71f0))
+* **pre-commit:** update hook for `rubocop` [skip ci] ([21a2b99](https://github.com/saltstack-formulas/cert-formula/commit/21a2b99e5a3416e060dbdc7a2ec6c9f16f7fe00c))
+
+
+### Tests
+
+* **inspec:** add InSpec shared resources ([b1ad9d7](https://github.com/saltstack-formulas/cert-formula/commit/b1ad9d79d9df34e500e591bb0315acfddf831067))
+* **inspec:** verify `mapdata` dump against reference files ([42f299f](https://github.com/saltstack-formulas/cert-formula/commit/42f299f64acdfa498cb2d6f7457776ad762c96dc))
+* **managed:** fix for Oracle Linux ([82257ca](https://github.com/saltstack-formulas/cert-formula/commit/82257ca1cb1853b38e56fd2a8c454ab80515a59d))
+* **map:** dump `mapdata` content ([9a490de](https://github.com/saltstack-formulas/cert-formula/commit/9a490ded65caa68ac129b22b7eaf6d4ce7ca54cb))
+
 ## [0.4.3](https://github.com/saltstack-formulas/cert-formula/compare/v0.4.2...v0.4.3) (2020-12-16)
 
 
