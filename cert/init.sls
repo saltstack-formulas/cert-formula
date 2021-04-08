@@ -1,12 +1,12 @@
 # This is the main state file for deploying certificates
 
-{% from "cert/map.jinja" import map with context %}
+{% from "cert/map.jinja" import mapdata with context %}
 
 # Install required packages
 cert_packages:
   pkg.installed:
     - pkgs:
-{% for pkg in map.pkgs %}
+{% for pkg in mapdata.pkgs %}
       - {{ pkg }}
 {% endfor %}
 
@@ -22,17 +22,17 @@ cert_packages:
 
   {% set cert = data.get('cert', False) %}
   {% set key = data.get('key', False) %}
-  {% set cert_ext = data.get('cert_ext', map.cert_ext) %}
-  {% set key_ext = data.get('key_ext', map.key_ext) %}
-  {% set cert_user = data.get('cert_user', map.cert_user) %}
-  {% set key_user = data.get('key_user', map.key_user) %}
-  {% set cert_group = data.get('cert_group', map.cert_group) %}
-  {% set key_group = data.get('key_group', map.key_group) %}
-  {% set cert_mode = data.get('cert_mode', map.cert_mode) %}
-  {% set key_mode = data.get('key_mode', map.key_mode) %}
-  {% set cert_dir = data.get('cert_dir', map.cert_dir) %}
-  {% set key_dir = data.get('key_dir', map.key_dir) %}
-  {% set remove = data.get('remove', map.remove) %}
+  {% set cert_ext = data.get('cert_ext', mapdata.cert_ext) %}
+  {% set key_ext = data.get('key_ext', mapdata.key_ext) %}
+  {% set cert_user = data.get('cert_user', mapdata.cert_user) %}
+  {% set key_user = data.get('key_user', mapdata.key_user) %}
+  {% set cert_group = data.get('cert_group', mapdata.cert_group) %}
+  {% set key_group = data.get('key_group', mapdata.key_group) %}
+  {% set cert_mode = data.get('cert_mode', mapdata.cert_mode) %}
+  {% set key_mode = data.get('key_mode', mapdata.key_mode) %}
+  {% set cert_dir = data.get('cert_dir', mapdata.cert_dir) %}
+  {% set key_dir = data.get('key_dir', mapdata.key_dir) %}
+  {% set remove = data.get('remove', mapdata.remove) %}
 
 {{ cert_dir }}/{{ name }}{{ cert_ext }}:
   {% if remove %}
@@ -45,7 +45,7 @@ cert_packages:
     - contents: |
 {{ cert|indent(8, True) }}
     {% else %}
-    - source: {{ map.cert_source_dir }}{{ name }}{{ cert_ext }}
+    - source: {{ mapdata.cert_source_dir }}{{ name }}{{ cert_ext }}
     {% endif %}
     - makedirs: True
     - user: {{ cert_user }}

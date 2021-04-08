@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+#
+# Set default values.
+---
+values:
+  cert_dir: "/etc/ssl/certs"
+  key_dir: "/etc/ssl/private"
+  cert_source_dir: "salt://cert/"
+  cert_tmp_dir: "/tmp/certs/"
+  cert_ext: ".crt"
+  key_ext: ".key"
+  cert_user: "root"
+  key_user: "root"
+  cert_group: "root"
+  key_group: "root"
+  cert_mode: 644
+  key_mode: 600
+  remove: false
+...
