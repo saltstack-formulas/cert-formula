@@ -1,6 +1,6 @@
 # This is the main state file for deploying certificates
 
-{% from "cert/map.jinja" import mapdata with context %}
+{% from "cert/map.jinja" import mapdata without context %}
 
 # Install required packages
 cert_packages:

@@ -4,7 +4,7 @@
 # A testing state created to add certificate and key file that will
 # be removed to test certificate removal.
 
-{% from "cert/map.jinja" import mapdata with context %}
+{% from "cert/map.jinja" import mapdata without context %}
 
 add-test-cert:
   file.managed:
