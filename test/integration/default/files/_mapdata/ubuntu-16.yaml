@@ -14,6 +14,14 @@ values:
   key_group: ssl-cert
   key_mode: 640
   key_user: root
+  map_jinja:
+    sources:
+    - Y:G@osarch
+    - Y:G@os_family
+    - Y:G@os
+    - Y:G@osfinger
+    - C@cert:lookup
+    - Y:G@id
   pkgs:
   - ca-certificates
   - ssl-cert

@@ -1,39 +1,75 @@
-{% set map = salt['grains.filter_by']({
-    'default': {
-        'cert_dir': '/etc/ssl/certs',
-        'key_dir': '/etc/ssl/private',
-        'cert_source_dir': 'salt://cert/',
-        'cert_tmp_dir': '/tmp/certs/',
-        'cert_ext': '.crt',
-        'key_ext': '.key',
-        'cert_user': 'root',
-        'key_user': 'root',
-        'cert_group': 'root',
-        'key_group': 'root',
-        'cert_mode': 644,
-        'key_mode': 600,
-        'remove': false,
-    },
-    'Arch': {
-        'pkgs': [ 'ca-certificates',
-                  'ca-certificates-mozilla',
-                  'ca-certificates-utils',],
-    },
-    'Debian': {
-        'pkgs': [ 'ca-certificates', 'ssl-cert' ],
-        'key_group': 'ssl-cert',
-        'key_mode': 640,
-        'cert_dir': '/usr/local/share/ca-certificates',
-    },
-    'RedHat': {
-        'cert_dir': '/etc/pki/tls/certs',
-        'key_dir': '/etc/pki/tls/private',
-        'pkgs': [ 'ca-certificates' ],
-   },
-    'Suse': {
-        'cert_dir': '/etc/ssl/certs',
-        'key_dir': '/etc/ssl/private',
-        'pkgs': [ 'ca-certificates', 'ca-certificates-mozilla'],
-        'cert_mode': '444',
-    },
-}, grain='os_family', merge=salt['pillar.get']('cert:lookup'), base='default') %}
+{#- -*- coding: utf-8 -*- #}
+{#- vim: ft=jinja #}
+
+{%- if not tplfile.endswith("/map.jinja") %}
+{#-   Force import `without context` #}
+{#-   `with context` override the `tplfile` and `tpldir` variables #}
+{{-   raise("Import error: map.jinja must be imported without context. tplfile='" ~ tplfile ~ "'") }}
+{%- elif tplfile.startswith("../") %}
+{#-   Force import with absolute path #}
+{{-   raise("Import error: map.jinja must be imported with absolute path. tplfile='" ~ tplfile ~ "'") }}
+{%- endif %}
+
+{#- `tplroot` is the directory of the current imported file #}
+{%- set tplroot = tpldir %}
+{%- from tplroot ~ "/libmapstack.jinja" import mapstack without context %}
+
+{#- Where to lookup parameters source files #}
+{%- set formula_param_dir = tplroot ~ "/parameters" %}
+
+{#- List of sources to lookup for parameters #}
+{#- Fallback to previously used grains plus minion `id` #}
+{%- set map_sources = [
+      "Y:G@osarch",
+      "Y:G@os_family",
+      "Y:G@os",
+      "Y:G@osfinger",
+      "C@" ~ tplroot ~ ":lookup",
+      "C@" ~ tplroot,
+      "Y:G@id",
+    ] %}
+
+{%- set _map_settings = mapstack(
+      matchers=["map_jinja.yaml"],
+      defaults={
+        "values": {"sources": map_sources}
+      },
+      log_prefix="map.jinja configuration: ",
+    )
+    | load_yaml %}
+
+{%- set map_sources = _map_settings | traverse("values:sources") %}
+{%- do salt["log.debug"](
+      "map.jinja: load parameters from sources:\n"
+      ~ map_sources
+      | yaml(False)
+    ) %}
+
+{#- Load formula parameters values #}
+{%- set _formula_matchers = ["defaults.yaml"] + map_sources %}
+
+{%- set _formula_settings = mapstack(
+      matchers=_formula_matchers,
+      dirs=[formula_param_dir],
+      defaults={
+        "values": {},
+        "merge_strategy": salt["config.get"](tplroot ~ ":strategy", None),
+        "merge_lists": salt["config.get"](tplroot ~ ":merge_lists", False),
+      },
+      log_prefix="map.jinja: ",
+    )
+    | load_yaml %}
+
+{#- Make sure to track `map.jinja` configuration with `_mapdata` #}
+{%- do _formula_settings["values"].update(
+      {
+        "map_jinja": _map_settings["values"]
+      }
+    ) %}
+
+{%- do salt["log.debug"]("map.jinja: save parameters in variable 'mapdata'") %}
+{%- set mapdata = _formula_settings["values"] %}
+
+{#- Per formula post-processing of `mapdata` if it exists #}
+{%- do salt["log.debug"]("map.jinja: post-processing of 'mapdata'") %}
+{%- include tplroot ~ "/post-map.jinja" ignore missing %}
