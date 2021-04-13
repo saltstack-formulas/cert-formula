@@ -2,6 +2,38 @@
 Changelog
 =========
 
+`1.0.0 <https://github.com/saltstack-formulas/cert-formula/compare/v0.4.4...v1.0.0>`_ (2021-04-13)
+------------------------------------------------------------------------------------------------------
+
+Bug Fixes
+^^^^^^^^^
+
+
+* **map:** unable to setup test infrastructure (\ `c223af4 <https://github.com/saltstack-formulas/cert-formula/commit/c223af422a2ee7f09458955f48642201d0d63d3f>`_\ )
+
+Features
+^^^^^^^^
+
+
+* **map:** update to generic v5 ``map.jinja`` (\ `93c89e1 <https://github.com/saltstack-formulas/cert-formula/commit/93c89e12049172dcdfe993e38dd04628bb6fa764>`_\ )
+
+Tests
+^^^^^
+
+
+* **inspec:** ``map.jinja`` configuration is now in reference files (\ `4041422 <https://github.com/saltstack-formulas/cert-formula/commit/40414223b74199d2d2305997b761e932f30fdd1f>`_\ )
+* standardise use of ``share`` suite & ``_mapdata`` state [skip ci] (\ `b372c37 <https://github.com/saltstack-formulas/cert-formula/commit/b372c372f76d6e3adfec657b9c6e75aa3d43535c>`_\ )
+
+BREAKING CHANGES
+^^^^^^^^^^^^^^^^
+
+
+* **map:** ``map.jinja`` import must use ``without context``
+* **map:** ``libmapstack.jinja`` import must use ``without context``
+* **map:** ``libmatchers.jinja`` import must use ``without context``
+* **map:** ``map.jinja`` now export a generic ``mapdata`` variable
+* **map:** the parameters per grains are now under ``cert/parameters/``
+
 `0.4.4 <https://github.com/saltstack-formulas/cert-formula/compare/v0.4.3...v0.4.4>`_ (2021-03-17)
 ------------------------------------------------------------------------------------------------------
 
