@@ -9,11 +9,32 @@ values:
   cert_source_dir: /tmp/kitchen/srv/salt/files/
   cert_tmp_dir: /tmp/certs/
   cert_user: root
+  certlist:
+    cert.and.key.to.add:
+      cert: "-----BEGIN CERTIFICATE-----\n1MOCKED CERT AND KEY\n-----END CERTIFICATE----- "
+      key: "-----BEGIN RSA PRIVATE KEY-----\n1MOCKED CERT AND KEY\n-----END RSA PRIVATE
+        KEY----- "
+    cert.and.key.to.remove:
+      cert: "-----BEGIN CERTIFICATE-----\n3MOCKED CERT AND KEY\n-----END CERTIFICATE----- "
+      key: "-----BEGIN RSA PRIVATE KEY-----\n3MOCKED CERT AND KEY\n-----END RSA PRIVATE
+        KEY----- "
+      remove: true
+    cert.and.key.with.ext.to.add:
+      cert: "-----BEGIN CERTIFICATE-----\n4MOCKED CERT AND KEY\n-----END CERTIFICATE----- "
+      cert_ext: ".pem"
+      key: "-----BEGIN RSA PRIVATE KEY-----\n4MOCKED CERT AND KEY\n-----END RSA PRIVATE
+        KEY----- "
+      key_ext: ".priv"
+    cert.from.src.to.add: {}
+    cert.to.add:
+      cert: "-----BEGIN CERTIFICATE-----\n2MOCKED CERT\n-----END CERTIFICATE----- "
   key_dir: /etc/pki/tls/private
   key_ext: .key
   key_group: root
   key_mode: 600
   key_user: root
+  lookup:
+    cert_source_dir: "/tmp/kitchen/srv/salt/files/"
   map_jinja:
     sources:
     - Y:G@osarch
@@ -21,6 +42,7 @@ values:
     - Y:G@os
     - Y:G@osfinger
     - C@cert:lookup
+    - C@cert
     - Y:G@id
   pkgs:
   - ca-certificates
