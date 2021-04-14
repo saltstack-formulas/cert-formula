@@ -10,5 +10,6 @@ values:
     - "Y:G@os"
     - "Y:G@osfinger"
     - "C@cert:lookup"
+    - "C@cert"
     - "Y:G@id"
 ...
