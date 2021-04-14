@@ -17,4 +17,5 @@ values:
   cert_mode: 644
   key_mode: 600
   remove: false
+  certlist: {}
 ...

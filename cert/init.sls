@@ -16,7 +16,7 @@ cert_packages:
 # Make sure we only run update-ca-certificates if certificates were managed
 {% set vals = { 'managed_certs': False } %}
 
-{% for name, data in salt['pillar.get']('cert:certlist', {}).items() %}
+{% for name, data in mapdata.get('certlist', {}).items() %}
 
   {% do vals.update({'managed_certs': True}) %}
 
