@@ -2,6 +2,21 @@
 Changelog
 =========
 
+`1.1.0 <https://github.com/saltstack-formulas/cert-formula/compare/v1.0.0...v1.1.0>`_ (2021-04-14)
+------------------------------------------------------------------------------------------------------
+
+Features
+^^^^^^^^
+
+
+* **map:** users can configure ``certlist`` in YAML files (\ `1ae2717 <https://github.com/saltstack-formulas/cert-formula/commit/1ae27175ffee06b679a4567f990efabd70bef6f0>`_\ )
+
+Tests
+^^^^^
+
+
+* **inspec:** the ``cert`` pillar must be in ``mapdata`` reference files (\ `36e04e1 <https://github.com/saltstack-formulas/cert-formula/commit/36e04e111b6d927c2ddd4ba261f39ff84b0d9676>`_\ )
+
 `1.0.0 <https://github.com/saltstack-formulas/cert-formula/compare/v0.4.4...v1.0.0>`_ (2021-04-13)
 ------------------------------------------------------------------------------------------------------
 
