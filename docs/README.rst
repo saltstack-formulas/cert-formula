@@ -53,7 +53,19 @@ Available states
 ``cert``
 ^^^^^^^^
 
+*Meta-state (This is a state that includes other states)*.
+
 Deploys or removes given certificates and keys.
+
+``cert.package``
+^^^^^^^^^^^^^^^^
+
+This state will install the required packages to manage certificates.
+
+``cert.deployed``
+^^^^^^^^^^^^^^^^^
+
+This state will write the certificates and there matching keys, if any, are store on disk and integrated in the system.
 
 
 Available modules
