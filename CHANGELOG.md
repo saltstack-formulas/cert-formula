@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.2.0](https://github.com/saltstack-formulas/cert-formula/compare/v1.1.1...v1.2.0) (2021-04-26)
+
+
+### Features
+
+* **platform:** support the Gentoo distributions ([a0f2701](https://github.com/saltstack-formulas/cert-formula/commit/a0f2701b63121e8deafbfc69ec6970c3a537917f))
+
 ## [1.1.1](https://github.com/saltstack-formulas/cert-formula/compare/v1.1.0...v1.1.1) (2021-04-26)
 
 

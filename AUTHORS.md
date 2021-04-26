@@ -5,8 +5,8 @@ This list is sorted by the number of commits per contributor in _descending_ ord
 Avatar|Contributor|Contributions
 :-:|---|:-:
 <img class='float-left rounded-1' src='https://avatars.githubusercontent.com/u/10231489?v=4' width='36' height='36' alt='@myii'>|[@myii](https://github.com/myii)|81
+<img class='float-left rounded-1' src='https://avatars.githubusercontent.com/u/1233212?v=4' width='36' height='36' alt='@baby-gnu'>|[@baby-gnu](https://github.com/baby-gnu)|14
 <img class='float-left rounded-1' src='https://avatars.githubusercontent.com/u/1800660?v=4' width='36' height='36' alt='@aboe76'>|[@aboe76](https://github.com/aboe76)|13
-<img class='float-left rounded-1' src='https://avatars.githubusercontent.com/u/1233212?v=4' width='36' height='36' alt='@baby-gnu'>|[@baby-gnu](https://github.com/baby-gnu)|12
 <img class='float-left rounded-1' src='https://avatars.githubusercontent.com/u/52996?v=4' width='36' height='36' alt='@daks'>|[@daks](https://github.com/daks)|10
 <img class='float-left rounded-1' src='https://avatars.githubusercontent.com/u/2094680?v=4' width='36' height='36' alt='@daschatten'>|[@daschatten](https://github.com/daschatten)|8
 <img class='float-left rounded-1' src='https://avatars.githubusercontent.com/u/8021965?v=4' width='36' height='36' alt='@ameneau'>|[@ameneau](https://github.com/ameneau)|4
