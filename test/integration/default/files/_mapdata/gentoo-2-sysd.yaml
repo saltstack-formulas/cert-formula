@@ -44,4 +44,6 @@ values:
     - C@cert:lookup
     - C@cert
     - Y:G@id
+  pkgs:
+  - app-misc/ca-certificates
   remove: false
