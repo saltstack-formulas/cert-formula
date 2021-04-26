@@ -2,6 +2,27 @@
 Changelog
 =========
 
+`1.1.1 <https://github.com/saltstack-formulas/cert-formula/compare/v1.1.0...v1.1.1>`_ (2021-04-26)
+------------------------------------------------------------------------------------------------------
+
+Code Refactoring
+^^^^^^^^^^^^^^^^
+
+
+* **layout:** split formula with ``package`` and ``deployed`` (\ `a7a55c3 <https://github.com/saltstack-formulas/cert-formula/commit/a7a55c3cfd9b90456d70fb1ae753e7cbfa32d857>`_\ )
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **kitchen+gitlab:** adjust matrix to add ``3003`` [skip ci] (\ `e6077cc <https://github.com/saltstack-formulas/cert-formula/commit/e6077cc63003005f7c4673d3280a5d519e26f06b>`_\ )
+
+Tests
+^^^^^
+
+
+* **_mapdata:** add verification file for ``fedora-34`` [skip ci] (\ `27ba289 <https://github.com/saltstack-formulas/cert-formula/commit/27ba2896baa68bad3981b1b306d020a7ae4a1ca0>`_\ )
+
 `1.1.0 <https://github.com/saltstack-formulas/cert-formula/compare/v1.0.0...v1.1.0>`_ (2021-04-14)
 ------------------------------------------------------------------------------------------------------
 
