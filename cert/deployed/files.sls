@@ -9,12 +9,7 @@
 # Deploy certificates
 # Place all files in a files_roots/cert, e.g. /srv/salt/files/cert/
 
-# Make sure we only run update-ca-certificates if certificates were managed
-{% set vals = { 'managed_certs': False } %}
-
 {% for name, data in mapdata.get('certlist', {}).items() %}
-
-  {% do vals.update({'managed_certs': True}) %}
 
   {% set cert = data.get('cert', False) %}
   {% set key = data.get('key', False) %}
@@ -48,10 +43,6 @@
     - group: {{ cert_group }}
     - mode: {{ cert_mode }}
   {% endif %}
-  {% if grains['os_family']=="Debian" %}
-    - onchanges_in:
-      - cmd: update-ca-certificates
-  {% endif %}
 
   {% if key %}
 {{ key_dir }}/{{ name }}{{ key_ext }}:
@@ -71,11 +62,3 @@
   {% endif %}
 
 {% endfor %}
-
-# We only want to run the update-ca-certificates if a cert was added or removed.
-{% if grains['os_family']=="Debian" and vals['managed_certs'] %}
-update-ca-certificates:
-  cmd.run:
-    - runas: root
-    - name: update-ca-certificates --fresh
-{% endif %} # / grains['os_family']=="Debian"

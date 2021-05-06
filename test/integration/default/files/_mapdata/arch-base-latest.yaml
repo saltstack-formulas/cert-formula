@@ -28,6 +28,7 @@ values:
     cert.from.src.to.add: {}
     cert.to.add:
       cert: "-----BEGIN CERTIFICATE-----\n2MOCKED CERT\n-----END CERTIFICATE----- "
+  certs_update_cmd: ""
   key_dir: /etc/ssl/private
   key_ext: .key
   key_group: root

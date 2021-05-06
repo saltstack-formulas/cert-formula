@@ -13,6 +13,7 @@
 ---
 values:
   cert_dir: "/usr/local/share/ca-certificates"
+  certs_update_cmd: "update-ca-certificates --fresh"
   key_group: "ssl-cert"
   key_mode: 640
   pkgs:

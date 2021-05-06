@@ -17,5 +17,6 @@ values:
   cert_mode: 644
   key_mode: 600
   remove: false
+  certs_update_cmd: ""
   certlist: {}
 ...
