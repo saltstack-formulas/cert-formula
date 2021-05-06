@@ -67,6 +67,11 @@ This state will install the required packages to manage certificates.
 
 This state will write the certificates and there matching keys, if any, are store on disk and integrated in the system.
 
+``cert.updated``
+^^^^^^^^^^^^^^^^
+
+This state will run the ``certs_update_cmd`` command to integrate the deployed certificates on supported systems.
+
 
 Available modules
 -----------------
