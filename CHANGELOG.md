@@ -1,5 +1,23 @@
 # Changelog
 
+# [1.3.0](https://github.com/saltstack-formulas/cert-formula/compare/v1.2.0...v1.3.0) (2021-05-06)
+
+
+### Continuous Integration
+
+* **gitlab-ci:** enable Gentoo instances [skip ci] ([c62cde9](https://github.com/saltstack-formulas/cert-formula/commit/c62cde9f5eedee530985f94a3e422a7d2bd6f2d4))
+
+
+### Features
+
+* **update:** integrate certificates on supported systems ([5c9e680](https://github.com/saltstack-formulas/cert-formula/commit/5c9e680e69999e0278210739f7cb0de3896d4a68))
+
+
+### Tests
+
+* **inspec:** integrade update command in mapdata dump files ([4c2d8da](https://github.com/saltstack-formulas/cert-formula/commit/4c2d8da382f5a50e7359eacc442e1d522a2afc86))
+* **rubocop:** fix all violations ([12030ab](https://github.com/saltstack-formulas/cert-formula/commit/12030ab74a1bdf013db78960796a920f4487a104))
+
 # [1.2.0](https://github.com/saltstack-formulas/cert-formula/compare/v1.1.1...v1.2.0) (2021-04-26)
 
 
