@@ -41,6 +41,7 @@ values:
     - Y:G@osarch
     - Y:G@os_family
     - Y:G@os
+    - Y:G@oscodename
     - Y:G@osfinger
     - C@cert:lookup
     - C@cert
