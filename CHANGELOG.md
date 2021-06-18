@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.1](https://github.com/saltstack-formulas/cert-formula/compare/v1.3.0...v1.3.1) (2021-06-18)
+
+
+### Bug Fixes
+
+* **tumbleweed:** install package `openssl-1_1` to generate `key_dir` ([069500b](https://github.com/saltstack-formulas/cert-formula/commit/069500b808d93139d7cfd511beebfeac924b7067))
+
+
+### Continuous Integration
+
+* add `arch-master` to matrix and update `.travis.yml` [skip ci] ([caeefac](https://github.com/saltstack-formulas/cert-formula/commit/caeeface3fd8de6733403eeb84a061199d6c6031))
+
+
+### Documentation
+
+* **map.jinja:** fix `rst-lint` violation [skip ci] ([8df5989](https://github.com/saltstack-formulas/cert-formula/commit/8df598985375237103e6543d40f482afb97ebba5))
+
 # [1.3.0](https://github.com/saltstack-formulas/cert-formula/compare/v1.2.0...v1.3.0) (2021-05-06)
 
 
