@@ -4,7 +4,8 @@
 # A testing state created to add certificate and key file that will
 # be removed to test certificate removal.
 
-{% from "cert/map.jinja" import mapdata without context %}
+{%- from "cert/map.jinja" import mapdata without context %}
+{%- set sls_package_install = 'cert.package.install' %}
 
 add-test-cert:
   file.managed:
@@ -13,6 +14,8 @@ add-test-cert:
         -----BEGIN CERTIFICATE-----
         3MOCKED CERT AND KEY
         -----END CERTIFICATE-----
+    - require:
+      - sls: {{ sls_package_install }}
 
 add-test-key:
   file.managed:
@@ -21,3 +24,5 @@ add-test-key:
         -----BEGIN RSA PRIVATE KEY-----
         3MOCKED CERT AND KEY
         -----END RSA PRIVATE KEY-----
+    - require:
+      - sls: {{ sls_package_install }}
